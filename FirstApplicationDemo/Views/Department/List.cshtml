@@ -1,0 +1,15 @@
+﻿@model IEnumerable<FirstApplicationDemo.Models.Department>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Department List</h2>
+<ul>
+    @{
+        foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.DepartmentName,"List","Employee",new {DepartmentID = item.DepartmentID},null)</li>
+        }
+    }
+</ul>

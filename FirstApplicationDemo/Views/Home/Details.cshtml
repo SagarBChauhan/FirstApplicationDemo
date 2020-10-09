@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+Name  : @ViewBag.Name
+<br />
+Semester : @ViewData["Sem"]
+<br />
+Cities
+<ul>
+    @foreach (var item in @ViewBag.Cities)
+    {
+        <li>@item</li>
+    }
+</ul>
+

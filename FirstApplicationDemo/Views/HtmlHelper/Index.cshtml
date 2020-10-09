@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<style type="text/css">
+    .textbox
+    {
+        background-color: #ffff99;
+        color: black;
+    }
+</style>
+@using (Html.BeginForm("Create", "HtmlHelper", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.Label("lblName", "First Name:")
+        </td>
+        <td>@Html.TextBox("txtName", "jigna", new
+       {
+           @class = "textbox",
+           @readonly = "true",
+           title = "Please Enter Name"
+       })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("lblGender", "Gender:")
+        </td>
+        <td>
+            @Html.RadioButton("rbGender", "Female", true,
+            new { style = "width:30px !important;" })Female
+            @Html.RadioButton("rbGender", "Male",
+            new { style = "width:30px !important;" })Male
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password:
+        </td>
+        <td>
+            @Html.Password("txtPassword")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address:
+        </td>
+        <td>@Html.TextArea("txtAddress", "", 5, 20, null)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Department:
+        </td>
+        <td>
+            @Html.DropDownList("Department", "Select Department")
+            @Html.Hidden("hdnID", "1")
+        </td>
+    </tr>
+</table>
+}
